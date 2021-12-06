@@ -92,6 +92,38 @@ def logout():
     return redirect(url_for("signin"))
 
 
+@app.route("/add_feedback", methods=["GET", "POST"])
+def add_feedback():
+    if request.method == "POST":
+        digital_meeting = "yes" if request.form.get(
+            "digital_meeting") else "no"
+        feedback = {
+            "feedback_type": request.form.get("feedback_type"),
+            "feedback_description": request.form.get("feedback_description"),
+            "feedback_reflection": request.form.get("feedback_reflection"),
+            
+        }
+        mongo.db.feedback.insert_one(feedback)
+        flash("Your requested therapy session has been registered")
+        return redirect(url_for("hrapplication"))
+
+    return render_template("feedback.html")
+
+# The application will find the username from the mongo database
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+
+    if 'user' in session:
+        return render_template(
+            "profile.html", username=user['username'], user=user)
+
+    return redirect(url_for("signin"))
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h3 class="white-text center-align content-header">Request A Meeting</h3>
+<div class="row">
+<div class="col s12 request-header center-align">
+    <p class="center-align white-text">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi provident neque ut vitae <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><b>Management</b> will get in contact with you through your 
+        email or mobile number (if you provided a phone number when you registered your account).
+    </p>
+</div>
+</div>
+<div class="row card-panel black">
+    <!-- form tags begins here-->
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_feedback') }}">
+        <div class="card-panel white">
+        <!-- Meeting type text input begins here-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-comment-medical prefix text-black"></i>
+                    <select id="feedback_type" name="feedback_type" required>
+                      <option value="" disabled selected>Choose Feedback</option>
+                      <option value="CBT Therapy">Colleagues</option>
+                      <option value="Couple Therapy">Management</option>
+                      <option value="Group Therapy">Schedule</option>
+                      <option value="Substance Abuse">Stress</option>
+                    </select>
+                    <label>Who would you like to see?</label>
+                  </div>
+            </div>
+        
+        <!-- Meeting type text input ends here -->
+        
+        <!-- meeting description text input begins here-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-headset prefix text-black"></i>
+                <textarea id="feedback_description" name="feedback_description" minlength="5"
+                    maxlength="200" class="materialize-textarea validate" required></textarea>
+                <label for="feedback_description">Reason for feedback:</label>
+            </div>
+        </div>
+        <!-- meeting description text input ends here-->
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-question-circle prefix text-black"></i>
+                <textarea id="feedback_reflection" name="feedback_reflection" minlength="5"
+                    maxlength="200" class="materialize-textarea validate" required></textarea>
+                <label for="feedback_reflection">What would you like to bring to our attention?</label>
+            </div>
+        </div>
+
+        <!-- requested date selections begins here -->
+        
+<!-- requested date selections ends here --> 
+
+
+        <!-- submit button begins here -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large green text-white text-shadow">
+                   Send Anonymous Feedback<i class="fas fa-plus-square right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- submit button ends here -->
+
+    </form>
+  </div>
+    <!-- form tags ends here-->
+</div>
+<footer class="page-footer black">
+    <hr class="white">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+            <h5 class="white-text">Love Therapy</h5>
+            <p class="grey-text text-lighten-4">Love Therapy is the official application for "Improvement Therapy & Psychiatrist Centre". <br>
+              If you would like to read more about us, then please <a href="#">press here.</a>
+          </p>
+          <h5 class="white-text">Centre Location</h5>
+        <p class="white-text">Vasagatan 82, Stockholm, 11120</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h6 class="white-text">We do not have any social media channels<b>.</b> <br>
+            Because we do not like the channels that are offered today<b>.</b></h6>
+        </div>
+        <div class="col l4 offset-l2 s12">
+            <h6 class="white-text">Call us at<b>:  </b>
+              0011111111</h6>
+          </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2021 Copyright Text
+      </div>
+    </div>
+  </footer>
+
+
+{% endblock %}
