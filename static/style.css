@@ -1,0 +1,155 @@
+/*------------------ Basic styling areas begins here ------------- */
+
+body {
+    background: #000;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+
+/*------------------ Basic styling areas ends here ------------- */
+
+
+/*------------------ navbar begins here ------------- */
+
+.nav-wrapper {
+    background: #000;
+}
+
+
+.brand-logo {
+    margin-left: 10px;
+}
+
+.branding {
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+@media(max-width: 390px) {
+  .branding {
+    font-size: 25px;
+  }
+}
+
+.right {
+    margin-right: 10px;
+}
+
+/*------------------ navbar ends here ------------- */
+
+/*------------------ headers begins here ------------- */
+
+.terms-paragragh {
+  margin-top: 100px;
+}
+
+
+.request-header {
+  font-size: 18px;
+}
+
+.about {
+  padding-top: 40px;
+}
+
+.content-header {
+  font-size: 38px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+@media(max-width: 768px) {
+  .request-header {
+    font-size: 14px;
+  }
+
+  .content-header {
+    font-size: 24px;
+  }
+
+}
+
+/*------------------ headers ends here ------------- */
+
+
+/*------------------ landing image begins here ------------- */
+
+.img-1 {
+    background-image: url("https://cdn.dribbble.com/users/388048/screenshots/2303293/therapist.gif");
+}
+
+.img-2 {
+  background-image: url("https://cdn.dribbble.com/users/388048/screenshots/2303293/therapist.gif");
+}
+
+
+.parallax-container {
+  height: 500px;
+  margin-top: 50px;
+}
+
+/*------------------ Landing image ends here ------------- */
+
+/*------------------ Register & Log-in page begins here ------------- */
+
+.header {
+    margin-top: 80px;
+    text-decoration: underline;
+    font-size: 30px;
+  }
+
+.register {
+    margin-top: 80px;
+  }
+
+.terms {
+    color: #000;
+  }
+
+
+  @media(max-width: 768px) {
+    .header {
+        font-size: 20px;
+    }
+}
+
+/*------------------ Register & Log-in page ends here ------------- */
+
+
+/*------------------ Flash messages begins here ------------- */
+
+.flashes {
+  margin: 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+.message {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  height: 75px;
+  width: 100%;
+}
+
+.card-content {
+  text-align: center;
+}
+
+button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.return-btn a {
+  color: #fff;
+}
+
+
+/*------------------ Flash messages ends here ------------- */

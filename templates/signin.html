@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="white-text center-align header">Log In To Your Account</h3>
+
+<div class="row register">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('signin') }}">
+        <div class="card-panel white">
+            <!-- The username section -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user-plus prefix black-blue-text text-darken-4"></i>
+                    <input id="username" name="username" type="text" minlength="5"
+                        maxlength="30" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <!-- The email section -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-mail-bulk prefix black-text text-darken-4"></i>
+                    <input id="email" name="email" type="email" minlength="5"
+                          class="validate" required>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <!-- The passoword section-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user-lock prefix black-blue-text text-darken-4"></i>
+                    <input id="password" name="password" type="password" minlength="5"
+                        maxlength="30" class="validate" required>
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <!-- button -->
+            <div class="row center-align">
+                <button type="submit" class="btn-large green text-white text-shadow">
+                    Log In <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<footer class="page-footer black">
+    <hr class="white">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+            <h5 class="white-text">HR. Wine Spectator</h5>
+            <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt reiciendis consectetur architecto quos a.<br>
+              If you would like to read more about us, then please <a href="#">press here.</a>
+          </p>
+          <h5 class="white-text">Centre Location</h5>
+        <p class="white-text">Vasagatan 82, Stockholm, 11120</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h6 class="white-text">We do not have any social media channels<b>.</b> <br>
+            Because we do not like the channels that are offered today<b>.</b></h6>
+        </div>
+        <div class="col l4 offset-l2 s12">
+            <h6 class="white-text">Call us at<b>:  </b>
+              0011111111</h6>
+          </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2021 Copyright Text
+      </div>
+    </div>
+  </footer>
+
+
+{% endblock %}
+
