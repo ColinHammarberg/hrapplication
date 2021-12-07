@@ -109,20 +109,6 @@ def add_feedback():
 
     return render_template("feedback.html")
 
-# The application will find the username from the mongo database
-
-
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    user = mongo.db.users.find_one(
-        {"username": session["user"]})
-
-    if 'user' in session:
-        return render_template(
-            "profile.html", username=user['username'], user=user)
-
-    return redirect(url_for("signin"))
-
 # Lets the user/client to contact
 
 
@@ -160,6 +146,20 @@ def add_documentation():
 
     return render_template("stress_level.html")
 
+
+# The application will find the username from the mongo database
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+
+    if 'user' in session:
+        return render_template(
+            "profile.html", username=user['username'], user=user)
+
+    return redirect(url_for("signin"))
 
 
 if __name__ == "__main__":
