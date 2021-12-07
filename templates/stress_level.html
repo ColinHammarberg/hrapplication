@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="white-text center-align content-header">My Journal With HR</h3>
+<div class="row">
+<div class="col s12 request-header center-align white-text">
+    <p class="center-align"> On this page you are able to document how you are feeling in your journal.<br>
+        Human resources are able to view your post and analyze the data collected.
+    </p>
+</div>
+</div>
+<div class="row card-panel black lighten-5">
+    <!-- form tags begins here-->
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_documentation') }}">
+        <div class="card-panel white lighten-4">
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix text-black"></i>
+                    <input id="diary_date" name="diary_date" type="text" class="datepicker validate"  required>
+                    <label for="diary_date">Document today's date</label>
+                </div>
+            </div>
+        <!-- Diary/Journal type text input begins here-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-moon prefix"></i>
+                    <select id="diary_type" name="diary_type" required>
+                      <option value="" disabled selected>Mood</option>
+                      <option value="I feel terrible">I feel terrible</option>
+                      <option value="I feel bad">I feel bad</option>
+                      <option value="I feel alright">I feel alright</option>
+                      <option value="I feel good">I feel good</option>
+                    </select>
+                    <label>How do you feel today?</label>
+                  </div>
+            </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pen-alt prefix"></i>
+                <textarea id="diary_description" name="diary_description" maxlength="50" minlength="5"
+                     class="materialize-textarea validate"></textarea>
+                <label for="diary_description">What is today's post about:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pen-alt prefix"></i>
+                <textarea id="diary_reflection" name="diary_reflection" minlength="5"
+                    maxlength="2000" class="materialize-textarea validate" required></textarea>
+                <label for="diary_reflection">Write your documentation here:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-book prefix"></i>                
+                <textarea id="employee_note" name="employee_note" minlength="5"
+                    maxlength="500" class="materialize-textarea validate" required></textarea>
+                <label for="employee_note">Leave a note:</label>
+            </div>
+        </div>
+
+    
+
+    <div class="row">
+        <div class="input-field col s12">
+        <div class="switch">
+            <label for="hr_read">
+            <input type="checkbox" id="hr_read" name="hr_read">
+            <span class="lever"></span>
+            Should Human Resources prioritize this?
+        </label>
+        </div>
+    </div>
+</div>
+
+        <!-- submit button begins here -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large green text-white text-shadow">
+                   Post <i class="fas fa-plus-square right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- submit button ends here -->
+
+    </form>
+  </div>
+
+    <!-- form tags ends here-->
+</div>
+<footer class="page-footer black">
+    <hr class="white">
+    <div class="container black">
+      <div class="row black">
+        <div class="col l6 s12">
+            <h5 class="white-text">HR. Wine Spectator</h5>
+            <p class="grey-text text-lighten-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab laudantium error facilis quasi impedit minus voluptas repellat!<br>
+              If you would like to read more about us, then please <a href="#">press here.</a>
+          </p>
+          <h5 class="white-text">Centre Location</h5>
+        <p class="white-text">Vasagatan 82, Stockholm, 11120</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h6 class="white-text">We do not have any social media channels<b>.</b> <br>
+            Because we do not like the channels that are offered today<b>.</b></h6>
+        </div>
+        <div class="col l4 offset-l2 s12">
+            <h6 class="white-text">Call us at<b>:  </b>
+              0011111111</h6>
+          </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2021 Copyright Text
+      </div>
+    </div>
+  </footer>
+  
+  {% endblock %}

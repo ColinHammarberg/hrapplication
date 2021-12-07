@@ -146,21 +146,19 @@ def contact():
 @app.route("/add_documentation", methods=["GET", "POST"])
 def add_documentation():
     if request.method == "POST":
-        therapist_read = "Yes" if request.form.get("therapist_read") else "No"
+        hr_read = "Yes" if request.form.get("hr_read") else "No"
         diary = {
             "diary_date": request.form.get("diary_date"),
             "diary_type": request.form.get("diary_type"),
             "diary_description": request.form.get("diary_description"),
-            "diary_reflection": request.form.get("diary_reflection"),
-            "therapist_note": request.form.get("therapist_note"),
-            "therapist_read": therapist_read,
-            "made_by": session["user"]
+            "employee_note": request.form.get("employee_note"),
+            "hr_read": hr_read
         }
         mongo.db.diary.insert_one(diary)
         flash("Your diary has been updated")
-        return redirect(url_for("love_therapy"))
+        return redirect(url_for("hrapplication"))
 
-    return render_template("add_documentation.html")
+    return render_template("stress_level.html")
 
 
 
