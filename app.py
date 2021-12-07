@@ -123,6 +123,45 @@ def profile(username):
 
     return redirect(url_for("signin"))
 
+# Lets the user/client to contact
+
+
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        emails = {
+            "email": request.form.get("email"),
+            "phone": request.form.get("phone"),
+            "message": request.form.get("message"),
+        }
+        mongo.db.emails.insert_one(emails)
+        flash("Your email was successfully sent")
+        return redirect(url_for("hrapplication"))
+
+    return render_template("contact.html")
+
+# Documentation page (Client Diary)
+
+
+@app.route("/add_documentation", methods=["GET", "POST"])
+def add_documentation():
+    if request.method == "POST":
+        therapist_read = "Yes" if request.form.get("therapist_read") else "No"
+        diary = {
+            "diary_date": request.form.get("diary_date"),
+            "diary_type": request.form.get("diary_type"),
+            "diary_description": request.form.get("diary_description"),
+            "diary_reflection": request.form.get("diary_reflection"),
+            "therapist_note": request.form.get("therapist_note"),
+            "therapist_read": therapist_read,
+            "made_by": session["user"]
+        }
+        mongo.db.diary.insert_one(diary)
+        flash("Your diary has been updated")
+        return redirect(url_for("love_therapy"))
+
+    return render_template("add_documentation.html")
+
 
 
 if __name__ == "__main__":

@@ -20,8 +20,8 @@
               <a href="{{ url_for('hrapplication') }}" class="brand-logo"><span class="branding">HR. Wine Spectator</span></a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
-                <li><a href="">Home</a></li>
-                <li><a href="">Contact HR</a></li>
+                <li><a href="{{ url_for('hrapplication') }}">Home</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact HR</a></li>
                 
                 <li><a href="">My Account</a></li>
                 <li><a href="{{ url_for('add_feedback') }}">Management</a></li>
@@ -38,8 +38,8 @@
 
         <!------- Mobile version & Ipad version navbar begins here (Inspired from Materializecss.com) ------->
           <ul class="sidenav center-align" id="mobile-demo">
-                <li><a href="">Home</a></li>
-                <li><a href="">Contact HR</a></li>
+                <li><a href="{{ url_for('hrapplication') }}">Home</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact HR</a></li>
                 
                 <li><a href="">My Account</a></li>
                 <li><a href="{{ url_for('add_feedback') }}">Management</a></li>

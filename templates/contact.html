@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="white-text center-align content-header">Contact Us Directly</h3>
+<div class="row">
+<div class="col s12 request-header center-align white-text">
+    <p class="center-align"> If you would like to contact Love Therapy directly. Then please do so through the form down below.<br>
+        You may also email Love Therapy directly at: info@lovetherapy.com
+    </p>
+</div>
+</div>
+
+<div class="row card-panel black lighten-5">
+    <!-- form tags begins here-->
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('contact') }}">
+        <div class="card-panel white lighten-4">
+        <!-- Meeting type text input begins here-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-bell prefix"></i>
+                    <select id="meeting_type" name="meeting_type" required>
+                      <option value="" disabled selected>Subject</option>
+                      <option value="Bookings">Issue</option>
+                      <option value="Information">Information</option>
+                      <option value="General Questions?">General Questions?</option>
+                    </select>
+                    <label>What subject should your email carry?</label>
+                  </div>
+            </div>
+        
+        <!-- Email address input begins here -->
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-envelope-open-text prefix"></i>
+                <textarea id="email" name="email" type="email" class="materialize-textarea validate" required></textarea>
+                <label for="email">Email</label>
+            </div>
+        </div>
+
+        <!-- Email address input ends here -->
+
+        <!-- Phone number (optional) input begins here -->
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-phone-square-alt prefix"></i>
+                <textarea id="phone" name="phone" minlength="5"
+                     class="materialize-textarea validate"></textarea>
+                <label for="phone">Phone Number (optional)</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-inbox prefix"></i>
+                <textarea id="message" name="message" minlength="5"
+                    maxlength="1000" class="materialize-textarea validate" required></textarea>
+                <label for="message">Message</label>
+            </div>
+        </div>
+
+        <!-- submit button begins here -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large green text-white text-shadow">
+                   Send<i class="fas fa-plus-square right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- submit button ends here -->
+
+    </form>
+  </div>
+
+    <!-- form tags ends here-->
+</div>
+<footer class="page-footer black">
+    <hr class="white">
+    <div class="container black">
+      <div class="row black">
+        <div class="col l6 s12">
+            <h5 class="white-text">HR. Wine Spectator</h5>
+            <p class="grey-text text-lighten-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab laudantium error facilis quasi impedit minus voluptas repellat!<br>
+              If you would like to read more about us, then please <a href="#">press here.</a>
+          </p>
+          <h5 class="white-text">Centre Location</h5>
+        <p class="white-text">Vasagatan 82, Stockholm, 11120</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h6 class="white-text">We do not have any social media channels<b>.</b> <br>
+            Because we do not like the channels that are offered today<b>.</b></h6>
+        </div>
+        <div class="col l4 offset-l2 s12">
+            <h6 class="white-text">Call us at<b>:  </b>
+              0011111111</h6>
+          </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2021 Copyright Text
+      </div>
+    </div>
+  </footer>
+
+
+{% endblock %}
