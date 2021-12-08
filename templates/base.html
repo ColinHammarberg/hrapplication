@@ -43,7 +43,7 @@
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('add_feedback') }}">Feedback</a></li>
-                <li><a href="">Stress Portal</a></li>
+                <li><a href="{{ url_for('add_documentation') }}">Stress Portal</a></li>
                 <li><a href="logout">Log Out</a></li>
                 {% else %}
                 <li><a href="{{ url_for('register') }}">Register</a></li>
